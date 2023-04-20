@@ -1,9 +1,9 @@
-import './style.css';
+import '../style.css';
 
 function ButtonsRegister() {
   return (
-    <div className="wrapper__button-register">
-      <p className="text__button-register">Зарегистрироваться</p>
+    <div className="wrapper__button">
+      <p className="text__button">Зарегистрироваться</p>
     </div>
   );
 }

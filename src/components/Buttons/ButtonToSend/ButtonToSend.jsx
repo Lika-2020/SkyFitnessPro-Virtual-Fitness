@@ -1,9 +1,9 @@
-import './style.css';
+import '../style.css';
 
 function ButtonToSend() {
   return (
-    <div className="wrapper__button-to-send">
-      <p className="text__button-to-send">Отправить</p>
+    <div className="wrapper__button">
+      <p className="text__button">Отправить</p>
     </div>
   );
 }

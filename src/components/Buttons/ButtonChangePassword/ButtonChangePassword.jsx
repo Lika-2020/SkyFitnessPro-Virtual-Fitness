@@ -1,9 +1,9 @@
-import './style.css';
+import '../style.css';
 
 function ButtonChangePassword() {
   return (
-    <div className="wrapper__button-change-password">
-      <p className="text__button-change-password">Редактировать пароль</p>
+    <div className="wrapper__button">
+      <p className="text__button">Редактировать пароль</p>
     </div>
   );
 }

@@ -1,9 +1,9 @@
-import './style.css';
+import '../style.css';
 
 function ButtonWrite() {
   return (
-    <div className="wrapper__button-write">
-      <p className="text__button-write">Записаться на тренировку</p>
+    <div className="wrapper__button">
+      <p className="text__button">Записаться на тренировку</p>
     </div>
   );
 }

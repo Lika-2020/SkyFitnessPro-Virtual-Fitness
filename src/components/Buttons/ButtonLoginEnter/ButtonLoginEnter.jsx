@@ -1,9 +1,9 @@
-import './style.css';
+import '../style.css';
 
 function ButtonLoginEnter() {
   return (
-    <div className="wrapper__button-enter">
-      <p className="text__button-enter">Войти</p>
+    <div className="wrapper__button">
+      <p className="text__button">Войти</p>
     </div>
   );
 }

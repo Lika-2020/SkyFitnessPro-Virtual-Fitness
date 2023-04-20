@@ -1,4 +1,4 @@
-.wrapper__button-change-password {
+.wrapper__button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,15 +8,15 @@
     border-radius: 46px;
 }
 
-.wrapper__button-change-password:hover {
+.wrapper__button:hover {
     background: #3F007D;
 }
 
-.wrapper__button-change-password:active {
+.wrapper__button:active {
     background: #271A58;
 }
 
-.text__button-change-password {
+.text__button {
     font-family: 'StratosSkyeng';
     font-style: normal;
     font-weight: 400;
