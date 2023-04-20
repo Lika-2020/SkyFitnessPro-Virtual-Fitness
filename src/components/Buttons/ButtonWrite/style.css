@@ -1,0 +1,28 @@
+.wrapper__button-write {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 275px;
+    height: 52px;
+    left: 52px;
+    top: 200px;
+    background: #580EA2;
+    border-radius: 46px;
+}
+
+.wrapper__button-write:hover {
+    background: #3F007D;
+}
+
+.wrapper__button-write:active {
+    background: #271A58;
+}
+
+.text__button-write {
+    color: #FFFFFF;
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
