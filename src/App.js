@@ -1,10 +1,10 @@
-import NewPasswordPage from './Pages/NewPasswordPage/NewPasswordPage';
+import NewLoginPage from './Pages/NewLoginPage/NewLoginPage';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header" />
-      <NewPasswordPage />
+      <NewLoginPage />
     </div>
   );
 }
