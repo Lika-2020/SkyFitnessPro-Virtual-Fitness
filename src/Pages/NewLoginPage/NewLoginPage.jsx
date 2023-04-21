@@ -6,8 +6,9 @@ function NewLoginPage() {
   return (
     <div className="container">
       <div className="wrapper">
+        <img className="logo" src={Logo} alt="logo" />
         <div className="form">
-          <img className="logo" src={Logo} alt="logo" />
+          <p className="text">Новый логин:</p>
           <input className="input" placeholder="Логин" type="text" />
           <div className="button__wrapper">
             <ButtonSave />
