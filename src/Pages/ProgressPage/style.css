@@ -48,16 +48,14 @@
 
 .my-progress {
     font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
+    font-style: bold;
     font-size: 32px;
     line-height: 40px;
 }
 
 .progress-text {
     font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
+    font-style: bold;
     font-size: 18px;
     line-height: 24px;
 }

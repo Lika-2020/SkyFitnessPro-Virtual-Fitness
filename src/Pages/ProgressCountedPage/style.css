@@ -9,10 +9,14 @@
 
 .title {
     font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
+    font-style: bold;
     font-size: 40px;
     line-height: 48px;
     width: 268px;
     text-align: center;
+}
+
+.logo__hand {
+    height: 20%;
+    width: 10%;
 }
