@@ -13,7 +13,7 @@ function YoutubePlayer() {
   const videoId = 'oqe98Dxivns';
 
   return (
-    <div className='yuotube'>
+    <div>
       <YouTube opts={opts} videoId={videoId} />
     </div>
   );
