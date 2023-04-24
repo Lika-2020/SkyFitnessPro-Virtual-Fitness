@@ -12,9 +12,9 @@ function WorckoutVideoPage() {
         <Header />
         <Navigation />
         <YoutubePlayer />
-        <div className='progress-exercises'>
-        <Exercises />
-        <ProgressCounted />
+        <div className="progress-exercises">
+          <Exercises />
+          <ProgressCounted />
         </div>
       </div>
     </div>
