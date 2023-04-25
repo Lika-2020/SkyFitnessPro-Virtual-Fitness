@@ -47,6 +47,11 @@
     padding-bottom: 75px;
 }
 
+.user__avatar {
+    width: 30px;
+    height: 30px;
+}
+
 .my__courses {
     padding-bottom: 100px;
 }
@@ -97,4 +102,11 @@
 .card__button {
     padding-left: 60px;
     padding-bottom: 40px;
+}
+
+select {
+  border: none;
+  font-size: 14px;
+  font-weight: 400px;
+
 }

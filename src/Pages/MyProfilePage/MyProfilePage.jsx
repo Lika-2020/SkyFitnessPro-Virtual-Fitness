@@ -1,7 +1,6 @@
 import './style.css';
 import Logo from '../../images/logo.png';
 import Avatar from '../../images/avatar.png';
-import Arrow from '../../images/arrow.png';
 import ButtonChangeLogin from '../../components/Buttons/ButtonChangeLogin/ButtonChangeLogin';
 import ButtonChangePassword from '../../components/Buttons/ButtonChangePassword/ButtonChangePassword';
 import ButtonGo from '../../components/Buttons/ButtonGo/ButtonGo';
@@ -12,9 +11,10 @@ function MyProfilePage() {
       <div className="header">
         <img src={Logo} alt="Logo" />
         <div className="user">
-          <img src={Avatar} alt="Avatar" />
-          <p>Сергей</p>
-          <img src={Arrow} alt="Arrow" />
+          <img src={Avatar} alt="Avatar" className="user__avatar" />
+          <select name="" id="">
+            <option value="Сергей">Сергей</option>
+          </select>
         </div>
       </div>
       <div className="user__profile">
