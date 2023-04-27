@@ -6,14 +6,27 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 }
 
-@font-face {
+a:visited {
+    text-decoration: none;
+    font-family: 'StratosSkyeng', sans-serif;
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    font-family: 'StratosSkyeng', sans-serif;
+   
+  }
+  @font-face {
     font-family: 'StratosSkyeng';
     src: local('StratosSkyeng'),
-        url('./fonts/Stratos-Regular.woff2') format('font-woff2'),
-        url('./fonts/Stratos-Regular.woff') format('font-woff');
+    url('./fonts/stratos/Stratos-Regular.woff2') format('font-woff2'),
+    url('./fonts/stratos/Stratos-Regular.woff2') format('font-woff');
     font-weight: 400;
     font-style: normal;
-}
+  }
 
 `;
 

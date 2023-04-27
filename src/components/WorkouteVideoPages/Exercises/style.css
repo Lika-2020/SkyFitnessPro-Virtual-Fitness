@@ -1,0 +1,18 @@
+.block__exercises {
+    margin-top: 75px;
+}
+
+.title {
+    padding-bottom: 30px;
+    font-size: 32px;
+}
+
+.ul {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 24px;
+}

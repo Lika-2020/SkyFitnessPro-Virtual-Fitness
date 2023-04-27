@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+select {
+  border: none;
+  font-size: 14px;
+  font-weight: 400px;
+
+}
+
+select:focus {
+  outline: none;
+}
+
+select option {
+  font-size: 14px;
+  font-weight: 400px;
+  color: #000;
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+    gap: 5px;
+}
