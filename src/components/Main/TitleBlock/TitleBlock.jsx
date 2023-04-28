@@ -10,7 +10,9 @@ function DivTitle() {
           Начните заниматься спортом <br />и улучшите качество жизни
         </h1>
       </div>
-      <img className="sticker" src={Sticker} alt="sticker" />
+      <div className="div_sticker">
+        <img className="sticker" src={Sticker} alt="sticker" />
+      </div>
     </div>
   );
 }
