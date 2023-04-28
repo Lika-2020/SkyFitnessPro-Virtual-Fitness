@@ -1,25 +1,23 @@
-.wrapper__button-up {
-    background: #C7E957;
-    border-radius: 46px;
-    width: 147px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .text__button-up {
-    font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #000000;
+  background: #c7e957;
+  border-radius: 46px;
+  width: 147px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-bottom: 60px;
 }
 
-.wrapper__button-up:hover {
-    background: #DAF289;
+.text__button-up:hover {
+  background: #daf289;
 }
 
-.wrapper__button-up:active {
-    background: #EBFFAB;
+.text__button-up:active {
+  background: #ebffab;
 }

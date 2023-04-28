@@ -1,9 +1,15 @@
 import './style.css';
 
+function topFunction() {
+  document.documentElement.scrollTop = 0;
+}
+
 function ButtonUp() {
   return (
-    <div className="wrapper__button-up">
-      <p className="text__button-up">Наверх ↑</p>
+    <div>
+      <button type="button" onClick={topFunction} className="text__button-up">
+        Наверх ↑
+      </button>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import Sticker from '../../../images/sticker.svg';
+import Sticker from '../../../images/Sale sticker 1.png';
 import './style.css';
 
 function DivTitle() {

@@ -1,32 +1,22 @@
-.wrapper__button-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 16px 7px;
-    gap: 8px;
-    width: 77px;
-    height: 36px;
-    left: 133px;
-    top: 58px;
-    background: #140D40;
-    border-radius: 46px;
-}
-
 .text__button-main {
-    font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    color: #FFFFFF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  width: 77px;
+  height: 36px;
+  background: #140d40;
+  border-radius: 46px;
+  margin-top: 24px;
+  border: none;
 }
 
-.wrapper__button-main:hover {
-    background: #2D1F79;
+.text__button-main:hover {
+  background: #2d1f79;
 }
 
-.wrapper__button-main:active {
-    background: #3B29A2;
+.text__button-main:active {
+  background: #3b29a2;
 }
