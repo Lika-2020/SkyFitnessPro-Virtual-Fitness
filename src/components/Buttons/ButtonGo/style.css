@@ -1,0 +1,25 @@
+.wrapper__button-go {
+    background: #C7E957;
+    border-radius: 46px;
+    width: 147px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text__button-go {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+}
+
+.wrapper__button-go:hover {
+    background: #DAF289;
+}
+
+.wrapper__button-go:active {
+    background: #EBFFAB;
+}

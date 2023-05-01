@@ -6,9 +6,9 @@ function NewPasswordPage() {
   return (
     <div className="container">
       <div className="wrapper">
+        <img className="logo" src={Logo} alt="logo" />
         <div className="form">
-          <img className="logo" src={Logo} alt="logo" />
-          <p>Новый пароль:</p>
+          <p className="text">Новый пароль:</p>
           <input className="input" placeholder="Пароль" type="password" />
           <input
             className="input"
