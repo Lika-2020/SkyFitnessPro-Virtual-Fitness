@@ -9,10 +9,13 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   background-color: #271a58;
-  margin-left: 140px;
-  margin-right: 140px;
 }
 
 a {
   text-decoration: none;
+}
+
+.wrapper {
+  margin-left: 140px;
+  margin-right: 140px;
 }

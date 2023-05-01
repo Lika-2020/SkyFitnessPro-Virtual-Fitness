@@ -17,6 +17,7 @@
 .wrapper {
   display: flex;
   justify-content: center;
+align-items: center;
 }
 
 
@@ -36,7 +37,7 @@
 }
 
 .block {
-  margin-top: 26px;
+  margin-top: 326px;
 }
 .buttons {
   height: 452px;
