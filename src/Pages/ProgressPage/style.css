@@ -1,0 +1,61 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    width: 366px;
+    height: 439px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.input {
+    width: 320px;
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.05px;
+    border: 0;
+    border-bottom: 1px solid #D0CECE;
+    outline: none;
+    /* padding: 8px 1px; */
+}
+
+.input:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.input::placeholder {
+    color: #D0CECE;
+    ;
+}
+
+.button__wrapper {
+    display: flex;
+    gap: 20px;
+    margin-top: 60px;
+    flex-direction: column;
+}
+
+.my-progress {
+    font-family: 'StratosSkyeng';
+    font-style: bold;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.progress-text {
+    font-family: 'StratosSkyeng';
+    font-style: bold;
+    font-size: 18px;
+    line-height: 24px;
+}

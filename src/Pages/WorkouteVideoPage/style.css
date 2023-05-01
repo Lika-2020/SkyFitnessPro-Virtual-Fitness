@@ -1,0 +1,9 @@
+.wrapper {
+   display: flex;
+   justify-content: center;
+}
+
+.progress-exercises {
+    display: flex;
+    gap: 150px;
+}
