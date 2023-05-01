@@ -1,0 +1,82 @@
+.foryou_div_title {
+  margin-top: 75px;
+}
+
+.foryou_title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.foryou_div_description_point_text1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  width: 244px;
+}
+
+.foryou_div_description_point_text2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  width: 244px;
+}
+
+.foryou_div_description_point_text3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  width: 218px;
+}
+
+.foryou_div_description_point {
+  display: flex;
+  gap: 24px;
+}
+
+.foryou_div_description {
+  display: flex;
+  gap: 87px;
+  margin-top: 40px;
+}
+
+.foryou_div_description_point_number {
+  width: 67px;
+  height: 67px;
+}
+
+.directions_description_title {
+  margin-top: 75px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.directions_div_description_list {
+  display: flex;
+  margin-top: 22px;
+}
+
+.directions_div_description_list_text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  width: 254px;
+  height: 96px;
+  margin-right: 168px;
+}
+
+.description_div_text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  width: 1160px;
+  margin-top: 75px;
+}

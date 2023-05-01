@@ -1,0 +1,11 @@
+.div_main {
+  margin-top: 52px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 37px;
+}
+
+.sports_card {
+  width: 360px;
+  height: 480px;
+}
