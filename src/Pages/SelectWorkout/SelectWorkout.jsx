@@ -1,7 +1,34 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
+import { selectWorkout } from '../../store/slice/workoutSlice';
+import RadioButton from '../../images/radioButton.jpg';
+import fetchWorkouts from '../../api/api';
+
+
 import './style.css';
-import RadioButton from '../../images/radioButton.jpg'
 
 function SelectWorkout() {
+  const dispatch = useDispatch();
+  const workouts = useSelector((state) => state.workouts.workouts);
+  const selectedWorkout = useSelector(
+    (state) => state.workouts.selectedWorkout
+  );
+
+  console.log(workouts);
+  const handleClick = (workout) => {
+    dispatch(selectWorkout(workout));
+  };
+
+  const isSelected = (workout) =>
+    selectedWorkout && selectedWorkout.id === workout.id;
+
+  useEffect(() => {
+    dispatch(fetchWorkouts());
+  }, [dispatch]);
+
+  
+
   return (
     <div className="wrapper">
       <div className="container">
@@ -9,55 +36,30 @@ function SelectWorkout() {
           <div className="title">
             <span className="title-workout">Выберите тренировку</span>
           </div>
-          <div className="buttons">
-            <div className="button__workout">
-              <div className='select'>
-              <span className="title-lesson">Утренняя практика</span>
-              <img src={RadioButton} alt="button" />
-              </div>
-              <span className="title-day">Йога на каждый день/1 день</span>
-             
+          {workouts.length === 0 ? (
+            <div>Loading...</div>
+          ) : (
+            <div className="buttons">
+              {workouts.map((workout) => (
+                <div
+                  role="presentation"
+                  key={workout.id}
+                  className={`button__workout ${
+                    isSelected(workout) ? 'selected' : ''
+                  }`}
+                  onClick={() => handleClick(workout)}
+                >
+                  <div className="select">
+                    <span className="title-lesson">{workout.name}</span>
+                    {isSelected(workout) && (
+                      <img src={RadioButton} alt="button" />
+                    )}
+                  </div>
+                  <span className="title-day">{`${workout.heading}/${workout.day}`}</span>
+                </div>
+              ))}
             </div>
-            <div className="button__workout">
-              <div className='select'>
-              <span className="title-lesson">Красота и здоровье</span>
-              <img src={RadioButton} alt="button" />
-              </div>
-              <span className="title-day">Йога на каждый день/2 день</span>
-            </div>
-            <div className="button__workout">
-              
-              <span className='not-selected__title'>Асаны стоя</span>
-              <span className='not-selected__day'>Йога на каждый день/3 день</span>
-            </div>
-            <div className="button__workout">
-              
-              <span className='not-selected__title'>Растягиваем  мышцы бедра</span>
-              <span className='not-selected__day'>Йога на каждый день/4 день</span>
-            </div>
-            <div className="button__workout">
-              
-              <span className='not-selected__title'> Гибкость спины</span>
-              <span className='not-selected__day'>Йога на каждый день/5 день</span>
-            </div>
-
-            <div className="button__workout">
-              
-              <span className='not-selected__title'> Гибкость спины</span>
-              <span className='not-selected__day'>Йога на каждый день/5 день</span>
-            </div>
-
-            <div className="button__workout">
-              
-              <span className='not-selected__title'> Гибкость спины</span>
-              <span className='not-selected__day'>Йога на каждый день/5 день</span>
-            </div>
-            <div className="button__workout">
-              
-              <span className='not-selected__title'> Гибкость спины</span>
-              <span className='not-selected__day'>Йога на каждый день/5 день</span>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

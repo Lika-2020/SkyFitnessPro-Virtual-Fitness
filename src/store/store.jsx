@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './reducers';
+import workoutsSlice from './slice/workoutSlice';
 
-const store = configureStore({
-  reducer: rootReducer,
+export default configureStore({
+  reducer: {
+    workouts: workoutsSlice,
+  },
 });
-
-export default store;
 

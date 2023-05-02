@@ -1,10 +1,10 @@
-import MainPage from './Pages/MainPage/MainPage';
+import SelectWorkout from './Pages/SelectWorkout/SelectWorkout';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header" />
-      <MainPage />
+      <SelectWorkout/>
     </div>
   );
 }
