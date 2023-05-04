@@ -1,18 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ref, child, get } from 'firebase/database';
 import db from '../database/db';
 
 const fetchWorkouts = createAsyncThunk('workout/fetchWorkouts', async () => {
-  const response = await db.ref('workouts').once('value');
+  const dbRef = ref(db);
+
+  const response = await get(child(dbRef, `workouts`));
 
   const workouts = Object.values(response.val());
-
-
-  response.forEach((childSnapshot) => {
-    const workout = childSnapshot.val();
-    workouts.push(workout);
-  });
-
-
 
   return workouts;
 });

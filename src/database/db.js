@@ -11,21 +11,9 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
+initializeApp(firebaseConfig);
 
- initializeApp(firebaseConfig);
 const db = getDatabase();
 
 export default db;
 
-// проверка подключения farbase
-const checkConnection = async () => {
-  try {
-    // eslint-disable-next-line no-unused-vars
-    const database = getDatabase(db);
-    console.log('Connection to Firebase database successful');
-  } catch (error) {
-    console.error('Error connecting to Firebase database', error);
-  }
-};
-
-checkConnection();

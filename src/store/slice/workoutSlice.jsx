@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import fetchWorkouts from '../../api/api';
+ import fetchWorkouts from '../../api/api';
 
 const initialState = {
   workouts: [],
@@ -14,7 +14,7 @@ const workoutsSlice = createSlice({
   reducers: {
     selectWorkout: (state, action) => ({
       ...state,
-      selectedWorkout: action.payload
+      selectedWorkout: action.payload,
     }),
   },
   extraReducers: (builder) => {
@@ -43,6 +43,5 @@ export const selectSelectedWorkout = (state) => state.workouts.selectedWorkout;
 export const selectWorkouts = (state) => state.workouts.workouts;
 export const selectLoading = (state) => state.workouts.loading;
 export const selectError = (state) => state.workouts.error;
-
 
 export default workoutsSlice.reducer;

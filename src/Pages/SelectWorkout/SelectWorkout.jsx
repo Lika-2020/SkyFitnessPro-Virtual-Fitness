@@ -1,11 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-
 import { selectWorkout } from '../../store/slice/workoutSlice';
 import RadioButton from '../../images/radioButton.jpg';
 import fetchWorkouts from '../../api/api';
-
-
 import './style.css';
 
 function SelectWorkout() {
@@ -15,19 +12,27 @@ function SelectWorkout() {
     (state) => state.workouts.selectedWorkout
   );
 
-  console.log(workouts);
-  const handleClick = (workout) => {
+  /* const handleClick = (workout) => {
+    console.log(`Clicked workout ${workout.id}`);
     dispatch(selectWorkout(workout));
   };
+*/
 
+  const handleClick = (workout) => {
+    if (selectedWorkout === workout) {
+      dispatch(selectWorkout(null)); // unselect the workout
+    } else {
+      dispatch(selectWorkout(workout)); // select the workout
+    }
+  };
+
+  console.log(workouts)
   const isSelected = (workout) =>
-    selectedWorkout && selectedWorkout.id === workout.id;
+    selectedWorkout && selectedWorkout === workout;
 
   useEffect(() => {
     dispatch(fetchWorkouts());
   }, [dispatch]);
-
-  
 
   return (
     <div className="wrapper">
@@ -49,13 +54,27 @@ function SelectWorkout() {
                   }`}
                   onClick={() => handleClick(workout)}
                 >
-                  <div className="select">
-                    <span className="title-lesson">{workout.name}</span>
+                  <div
+                    className={`select ${
+                      isSelected(workout) ? 'select-selected' : ''
+                    }`}
+                  >
+                    <span
+                      className={`title-lesson ${
+                        isSelected(workout) ? 'select-selected' : ''
+                      }`}
+                    >
+                      {workout.name}
+                    </span>
                     {isSelected(workout) && (
                       <img src={RadioButton} alt="button" />
                     )}
                   </div>
-                  <span className="title-day">{`${workout.heading}/${workout.day}`}</span>
+                  <span
+                    className={`title-day ${
+                      isSelected(workout) ? 'select-selected' : ''
+                    }`}
+                  >{`${workout.heading}/${workout.day}`}</span>
                 </div>
               ))}
             </div>
