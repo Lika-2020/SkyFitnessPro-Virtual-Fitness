@@ -1,70 +1,28 @@
-/* import { createSlice } from '@reduxjs/toolkit';
-import { fetchCoursesByCourseId } from '../../api/api'; */
-
-/* const initialState = {
-  courses: [],
-  selectedCourses: null,
-  loading: false,
-  error: null,
+import { createSlice } from "@reduxjs/toolkit";
+/* eslint-disable no-param-reassign */
+const initialState = {
+  description: null,
+  directions: [],
+  suitable: [],
+  id: null,
+  name: null,
+  workout: [],
 };
-
-
-
 const coursesSlice = createSlice({
-  name: 'courses',
+  name: "courses",
   initialState,
   reducers: {
-    selectCourses: (state, action) => ({
-      ...state,
-      selectedCourses: action.payload,
-    }),
-    setSelectedCourses: (state, action) => ({
-      ...state,
-      selectedCourses: action.payload,
-    }),
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchCoursesByCourseId.pending, (state) => ({
-        ...state,
-        loading: true,
-        error: null,
-      }))
-      .addCase(fetchCoursesByCourseId.fulfilled, (state, action) => ({
-        ...state,
-        loading: false,
-        courses: action.payload,
-      }))
-      .addCase(fetchCoursesByCourseId.rejected, (state, action) => ({
-        ...state,
-        loading: false,
-        error: action.error.message,
-      }));
+    setCourses(state, action) {
+      state.description = action.payload.description;
+      state.directions = action.payload.directions;
+      state.suitable = action.payload.suitable;
+      state.id = action.payload.id;
+      state.name = action.payload.name;
+      state.workout = action.payload.workout;
+    },
   },
 });
 
-export const { selectCourse, setSelectedCourse } = coursesSlice.actions;
+export const { setCourses } = coursesSlice.actions;
 
-export const selectSelectedCourse = (state) => state.courses.selectedCourse;
-export const selectCourses = (state) => state.courses.courses;
-export const selectLoading = (state) => state.courses.loading;
-export const selectError = (state) => state.courses.error;
-
-export default coursesSlice.reducer; */
-
-const initialState = {
-  courses: [],
-};
-
-const coursesReducer = (state = initialState, action = {}) => {
-  switch (action.type) {
-    case 'FETCH_COURSES_SUCCESS':
-      return { ...state, courses: action.payload };
-    case 'FETCH_COURSES_ERROR':
-      return { ...state, error: action.payload };
-    default:
-      return state;
-  }
-};
-
-export default coursesReducer;
+export default coursesSlice.reducer;

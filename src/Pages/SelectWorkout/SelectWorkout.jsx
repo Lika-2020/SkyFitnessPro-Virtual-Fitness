@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { selectWorkout } from '../../store/slice/workoutSlice';
+import { selectWorkout } from '../../store/slice/workoutsSlice';
 import RadioButton from '../../images/radioButton.jpg';
 import { fetchWorkouts } from '../../api/api';
 import './style.css';
@@ -15,29 +15,23 @@ function SelectWorkout() {
     (state) => state.workouts.selectedWorkout
   );
 
-  
-
   const handleClick = (workout) => {
     if (selectedWorkout === workout) {
       dispatch(selectWorkout(null)); // unselect the workout
     } else {
       dispatch(selectWorkout(workout)); // select the workout
-      navigate('/workout/:heading/:day');
+      navigate('/workoutVideo');
     }
-
-  
   };
 
   const isSelected = (workout) =>
     selectedWorkout && selectedWorkout === workout;
 
-  
-
   useEffect(() => {
     dispatch(fetchWorkouts());
   }, [dispatch]);
   console.log(workouts);
- 
+
   return (
     <div className="wrappers">
       <div className="container">

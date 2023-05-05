@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ref, child, get } from 'firebase/database';
 
 import db from '../database/db';
@@ -34,9 +34,4 @@ export const fetchCoursesByCourseId = (id) => async (dispatch) => {
   }
 };
 
-
-
-
-
-
-
+ 

@@ -20,7 +20,10 @@ const workoutsSlice = createSlice({
       ...state,
       selectedWorkout: action.payload,
     }),
-
+    setWorkouts: (state, action) => ({
+      ...state,
+      workouts: action.payload,
+    }),
   
   },
   extraReducers: (builder) => {
@@ -44,7 +47,7 @@ const workoutsSlice = createSlice({
   },
 });
 
-export const { selectWorkout, setSelectedWorkout } = workoutsSlice.actions;
+export const { selectWorkout, setSelectedWorkout, setWorkouts } = workoutsSlice.actions;
 
 export const selectSelectedWorkout = (state) => state.workouts.selectedWorkout;
 export const selectWorkouts = (state) => state.workouts.workouts;

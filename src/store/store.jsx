@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import coursesReducer from './slice/coursesSlice';
-import workoutsSlice from './slice/workoutSlice';
+import coursesSlice from './slice/coursesSlice';
+import workoutsSlice from './slice/workoutsSlice';
+import userSliceReducer from './slice/userSlice';
 // import videoReducer, { fetchVideo } from './slice/videoSlice';
 
 const store = configureStore({
   reducer: {
     workouts: workoutsSlice,
-     courses: coursesReducer,
+    courses: coursesSlice,
+    users: userSliceReducer,
   },
 });
 export default store;
