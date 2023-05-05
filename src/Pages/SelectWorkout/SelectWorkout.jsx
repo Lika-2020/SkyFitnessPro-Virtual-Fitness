@@ -1,41 +1,45 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { selectWorkout } from '../../store/slice/workoutSlice';
 import RadioButton from '../../images/radioButton.jpg';
-import fetchWorkouts from '../../api/api';
+import { fetchWorkouts } from '../../api/api';
 import './style.css';
+import Navigation from '../../components/WorkouteVideoPages/Navigation/Navigation';
 
 function SelectWorkout() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const workouts = useSelector((state) => state.workouts.workouts);
   const selectedWorkout = useSelector(
     (state) => state.workouts.selectedWorkout
   );
 
-  /* const handleClick = (workout) => {
-    console.log(`Clicked workout ${workout.id}`);
-    dispatch(selectWorkout(workout));
-  };
-*/
+  
 
   const handleClick = (workout) => {
     if (selectedWorkout === workout) {
       dispatch(selectWorkout(null)); // unselect the workout
     } else {
       dispatch(selectWorkout(workout)); // select the workout
+      navigate('/workout/:heading/:day');
     }
+
+  
   };
 
-  console.log(workouts)
   const isSelected = (workout) =>
     selectedWorkout && selectedWorkout === workout;
+
+  
 
   useEffect(() => {
     dispatch(fetchWorkouts());
   }, [dispatch]);
-
+  console.log(workouts);
+ 
   return (
-    <div className="wrapper">
+    <div className="wrappers">
       <div className="container">
         <div className="block">
           <div className="title">
@@ -55,6 +59,7 @@ function SelectWorkout() {
                   onClick={() => handleClick(workout)}
                 >
                   <div
+                    role="presentation"
                     className={`select ${
                       isSelected(workout) ? 'select-selected' : ''
                     }`}
@@ -70,6 +75,7 @@ function SelectWorkout() {
                       <img src={RadioButton} alt="button" />
                     )}
                   </div>
+
                   <span
                     className={`title-day ${
                       isSelected(workout) ? 'select-selected' : ''
@@ -77,6 +83,9 @@ function SelectWorkout() {
                   >{`${workout.heading}/${workout.day}`}</span>
                 </div>
               ))}
+              {selectedWorkout && (
+                <Navigation selectedWorkout={selectedWorkout} />
+              )}
             </div>
           )}
         </div>

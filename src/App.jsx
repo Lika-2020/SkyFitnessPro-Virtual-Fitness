@@ -1,12 +1,12 @@
-import SelectWorkout from './Pages/SelectWorkout/SelectWorkout';
+import AppRoutes from "./Pages/Routers/routers";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header" />
-      <SelectWorkout/>
-    </div>
+   
+      <AppRoutes />
+    
   );
 }
+
 
 export default App;

@@ -14,7 +14,7 @@
   border: 5px solid rgba(0, 0, 0, 0.05); /* padding вокруг плашки */
 }
 
-.wrapper {
+.wrappers{
   display: flex;
   justify-content: center;
 align-items: center;
@@ -34,6 +34,7 @@ align-items: center;
   font-weight: 700;
   line-height: 40px;
   font-family: 'StratosSkyeng, sans-serif';
+  color: black;
 }
 
 .block {
@@ -41,7 +42,7 @@ align-items: center;
 }
 .buttons {
   height: 452px;
-  margin-top: 40px;
+
   display: flex;
   flex-direction: column;
   align-items: center;

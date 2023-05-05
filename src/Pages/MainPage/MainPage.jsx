@@ -6,6 +6,9 @@ import Footer from '../../components/Main/Footer/Footer';
 
 function MainPage() {
   return (
+  <body className='body'>
+    
+
     <div className="wrapper">
       <div className="container">
         <Header />
@@ -14,6 +17,8 @@ function MainPage() {
         <Footer />
       </div>
     </div>
+    </body>
   );
+  
 }
 export default MainPage;
