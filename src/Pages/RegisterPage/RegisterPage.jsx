@@ -31,7 +31,7 @@ function RegisterPage() {
             token: user.accessToken,
           })
         );
-        navigate('/profile', { replace: true });
+        navigate('/login');
       })
 
       .catch((err) => {

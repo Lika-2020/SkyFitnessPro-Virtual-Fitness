@@ -1,8 +1,8 @@
-/* eslint-disable import/no-extraneous-dependencies */
+
 import './style.css';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { setUser } from "../../store/slice/userSlice";
 import Logo from '../../images/logo.png';
@@ -19,8 +19,8 @@ function LoginPage() {
   const [error, setError] = useState('');
   const [isClick, setIsClick] = useState('false');
 
-  localStorage.setItem('login', email);
-  localStorage.setItem('pass', pass);
+  localStorage.getItem('login', email);
+  localStorage.getItem('pass', pass);
   console.log(email, pass);
 
   const handleLogin = () => {
@@ -34,7 +34,7 @@ function LoginPage() {
             token: user.accessToken,
           })
         );
-        navigate('/profile', { replace: true });
+        navigate('/');
       })
 
       .catch((err) => {

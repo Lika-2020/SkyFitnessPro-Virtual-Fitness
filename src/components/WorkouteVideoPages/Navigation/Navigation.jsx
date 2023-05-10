@@ -1,21 +1,32 @@
 import './style.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchCoursesByCourseId } from '../../../api/api';
 
-import { useSelector } from 'react-redux';
-import { useDataBase } from '../../../api/apiFarbase';
+function Navigation({ selectedWorkout }) {
+  const courses = useSelector((state) => state.courses.courses);
+  console.log(courses)
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (selectedWorkout) {
+      dispatch(fetchCoursesByCourseId());
+    }
+  }, [dispatch, selectedWorkout]);
 
-function Navigation({ selectedWorkout, refURL }) {
-  useDataBase(refURL);
  
-  const name = useSelector((state) => state.name);
-  console.log(name)
-  
+
   return (
     <div className="container">
-      <span className="span">{name}</span>
+      <h1>{selectedWorkout?.name}</h1>
+      <span className="span">{courses.name}</span>
       <nav className="nav">
         {selectedWorkout && (
-          <span>{`${selectedWorkout.heading}/${selectedWorkout.day}`}</span>
+          <span>
+            {selectedWorkout.heading && selectedWorkout.day
+              ? `${selectedWorkout.heading}/${selectedWorkout.day}`
+              : ''}
+          </span>
         )}
       </nav>
     </div>

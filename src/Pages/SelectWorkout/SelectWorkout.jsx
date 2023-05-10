@@ -5,9 +5,10 @@ import { selectWorkout } from '../../store/slice/workoutsSlice';
 import RadioButton from '../../images/radioButton.jpg';
 import { fetchWorkouts } from '../../api/api';
 import './style.css';
-import Navigation from '../../components/WorkouteVideoPages/Navigation/Navigation';
+import { selectCourseId } from '../../store/slice/coursesSlice';
 
-function SelectWorkout() {
+
+function SelectWorkout({ courseId }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const workouts = useSelector((state) => state.workouts.workouts);
@@ -17,9 +18,15 @@ function SelectWorkout() {
 
   const handleClick = (workout) => {
     if (selectedWorkout === workout) {
-      dispatch(selectWorkout(null)); // unselect the workout
+      dispatch(selectWorkout(null));
+      dispatch(selectCourseId(null));
+      // unselect the workout
     } else {
-      dispatch(selectWorkout(workout)); // select the workout
+      dispatch(selectWorkout(workout));
+      // select the workout
+
+      dispatch(selectCourseId(courseId));
+      console.log(courseId);
       navigate('/workoutVideo');
     }
   };
@@ -74,12 +81,15 @@ function SelectWorkout() {
                     className={`title-day ${
                       isSelected(workout) ? 'select-selected' : ''
                     }`}
-                  >{`${workout.heading}/${workout.day}`}</span>
+                  >
+                    {' '}
+                    {workout.heading && workout.day
+                      ? `${workout.heading}/${workout.day}`
+                      : ''}
+                  </span>
                 </div>
               ))}
-              {selectedWorkout && (
-                <Navigation selectedWorkout={selectedWorkout} />
-              )}
+            
             </div>
           )}
         </div>

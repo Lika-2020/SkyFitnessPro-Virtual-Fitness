@@ -4,6 +4,7 @@ import WorkouteVideoPage from '../WorkouteVideoPage/WorkouteVideoPage';
 import MainPage from '../MainPage/MainPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import LoginPage from '../LoginPage/LoginPage';
+import ProgressPage from '../ProgressPage/ProgressPage';
 
 function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ function AppRoutes() {
       <Route path="/" element={<MainPage />} />
       <Route path="/select-workouts" element={<SelectWorkout />} />
       <Route path="/workoutVideo" element={<WorkouteVideoPage />} />
+      <Route path="/progress" element={<ProgressPage />} />
     </Routes>
   );
 }
