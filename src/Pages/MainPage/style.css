@@ -16,3 +16,7 @@ body {
 a {
   text-decoration: none;
 }
+
+.wrapper {
+  background-color: #271a58;
+}

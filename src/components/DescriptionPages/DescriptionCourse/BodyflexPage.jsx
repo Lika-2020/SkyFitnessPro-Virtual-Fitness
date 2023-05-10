@@ -3,7 +3,7 @@ import Card1 from '../../../images/1.svg';
 import Card2 from '../../../images/2.svg';
 import Card3 from '../../../images/3.svg';
 
-function DescriptionCourse() {
+function StretchingPage() {
   return (
     <div className="about_div">
       <div className="foryou_div">
@@ -18,7 +18,8 @@ function DescriptionCourse() {
               alt="1"
             />
             <h3 className="foryou_div_description_point_text1">
-              Давно хотели попробовать йогу, но не решались начать.
+              Хотите укрепить легкие и снизить вероятность заболеваний
+              дыхательной системы
             </h3>
           </div>
           <div className="foryou_div_description_point">
@@ -28,8 +29,7 @@ function DescriptionCourse() {
               alt="2"
             />
             <h3 className="foryou_div_description_point_text2">
-              Хотите укрепить позвоночник, избавиться от болей в спине и
-              суставах.
+              Улучшить пищеварение
             </h3>
           </div>
           <div className="foryou_div_description_point">
@@ -39,7 +39,7 @@ function DescriptionCourse() {
               alt="3"
             />
             <h3 className="foryou_div_description_point_text3">
-              Ищете активность, полезную для тела и души.
+              Ускорить метаболизм
             </h3>
           </div>
         </div>
@@ -49,20 +49,20 @@ function DescriptionCourse() {
           </div>
           <div className="directions_div_description_list">
             <h3 className="directions_div_description_list_text">
-              • Йога для новичков <br /> • Классическая йога <br /> •
-              Йогатерапия
-            </h3>
-            <h3 className="directions_div_description_list_text">
-              • Кундалини-йога <br /> • Хатха-йога <br /> • Аштанга-йога
+              • базовый <br /> • продвинутый
             </h3>
           </div>
         </div>
         <div className="description_div">
           <h3 className="description_div_text">
-            Благодаря комплексному воздействию упражнений происходит проработка
-            всех групп мышц, тренировка суставов, улучшается циркуляция крови.
-            Кроме того, упражнения дарят отличное настроение, заряжают бодростью
-            и помогают противостоять стрессам.
+            Весь смысл бодифлекса сводится к правильному дыханию, благодаря
+            которому упражнения на растяжку и укрепление мышц приобретают свою
+            эффективность. При выдыхании воздуха и задержке дыхания организм на
+            короткое время испытывает кислородное голодание, в крови
+            накапливается углекислый газ, что приводит к запуску некоторых
+            физиологических процессов, типичных для ситуации «бей или беги». То
+            есть, организм приходит в состояние повышенной готовности и способен
+            выполнять быстрые и энергичные действия.
           </h3>
         </div>
       </div>
@@ -70,4 +70,4 @@ function DescriptionCourse() {
   );
 }
 
-export default DescriptionCourse;
+export default StretchingPage;
