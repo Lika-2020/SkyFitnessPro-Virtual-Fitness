@@ -1,12 +1,12 @@
-import MainPage from './Pages/MainPage/MainPage';
+import AppRoutes from "./Pages/Routes/routes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header" />
-      <MainPage />
-    </div>
+   
+      <AppRoutes />
+    
   );
 }
+
 
 export default App;

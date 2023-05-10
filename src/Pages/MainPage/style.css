@@ -3,12 +3,13 @@
   padding: 0;
 }
 
-body {
+.body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  background-color: #271a58;
+    background-color: #271a58;
+    height: 100vh;
 }
 
 a {
@@ -18,4 +19,5 @@ a {
 .wrapper {
   margin-left: 140px;
   margin-right: 140px;
+  
 }

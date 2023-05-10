@@ -1,9 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './reducers';
+import coursesSlice from './slice/coursesSlice';
+import workoutsSlice from './slice/workoutsSlice';
+import userReducer from './slice/userSlice';
+import progressSlice from './slice/progressSlice';
+
 
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    workouts: workoutsSlice,
+    courses: coursesSlice,
+    users: userReducer,
+    progress: progressSlice,
+  },
 });
-
 export default store;
-

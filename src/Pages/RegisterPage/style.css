@@ -49,3 +49,22 @@
     margin-top: 60px;
     flex-direction: column;
 }
+
+.error-block {
+    width: 366px;
+    height: 40px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.error  {
+    font-family: "StratosSkyeng";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.8px;
+    color: red;
+    margin: 0;
+    padding: 0;
+}

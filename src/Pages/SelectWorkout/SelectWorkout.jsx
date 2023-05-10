@@ -1,63 +1,97 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { selectWorkout } from '../../store/slice/workoutsSlice';
+import RadioButton from '../../images/radioButton.jpg';
+import { fetchWorkouts } from '../../api/api';
 import './style.css';
-import RadioButton from '../../images/radioButton.jpg'
+import { selectCourseId } from '../../store/slice/coursesSlice';
 
-function SelectWorkout() {
+
+function SelectWorkout({ courseId }) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const workouts = useSelector((state) => state.workouts.workouts);
+  const selectedWorkout = useSelector(
+    (state) => state.workouts.selectedWorkout
+  );
+
+  const handleClick = (workout) => {
+    if (selectedWorkout === workout) {
+      dispatch(selectWorkout(null));
+      dispatch(selectCourseId(null));
+      // unselect the workout
+    } else {
+      dispatch(selectWorkout(workout));
+      // select the workout
+
+      dispatch(selectCourseId(courseId));
+      console.log(courseId);
+      navigate('/workoutVideo');
+    }
+  };
+
+  const isSelected = (workout) =>
+    selectedWorkout && selectedWorkout === workout;
+
+  useEffect(() => {
+    dispatch(fetchWorkouts());
+  }, [dispatch]);
+  console.log(workouts);
+
   return (
-    <div className="wrapper">
+    <div className="wrappers">
       <div className="container">
         <div className="block">
           <div className="title">
             <span className="title-workout">Выберите тренировку</span>
           </div>
-          <div className="buttons">
-            <div className="button__workout">
-              <div className='select'>
-              <span className="title-lesson">Утренняя практика</span>
-              <img src={RadioButton} alt="button" />
-              </div>
-              <span className="title-day">Йога на каждый день/1 день</span>
-             
-            </div>
-            <div className="button__workout">
-              <div className='select'>
-              <span className="title-lesson">Красота и здоровье</span>
-              <img src={RadioButton} alt="button" />
-              </div>
-              <span className="title-day">Йога на каждый день/2 день</span>
-            </div>
-            <div className="button__workout">
-              
-              <span className='not-selected__title'>Асаны стоя</span>
-              <span className='not-selected__day'>Йога на каждый день/3 день</span>
-            </div>
-            <div className="button__workout">
-              
-              <span className='not-selected__title'>Растягиваем  мышцы бедра</span>
-              <span className='not-selected__day'>Йога на каждый день/4 день</span>
-            </div>
-            <div className="button__workout">
-              
-              <span className='not-selected__title'> Гибкость спины</span>
-              <span className='not-selected__day'>Йога на каждый день/5 день</span>
-            </div>
+          {workouts.length === 0 ? (
+            <div>Loading...</div>
+          ) : (
+            <div className="buttons">
+              {workouts.map((workout) => (
+                <div
+                  role="presentation"
+                  key={workout.id}
+                  className={`button__workout ${
+                    isSelected(workout) ? 'selected' : ''
+                  }`}
+                  onClick={() => handleClick(workout)}
+                >
+                  <div
+                    role="presentation"
+                    className={`select ${
+                      isSelected(workout) ? 'select-selected' : ''
+                    }`}
+                  >
+                    <span
+                      className={`title-lesson ${
+                        isSelected(workout) ? 'select-selected' : ''
+                      }`}
+                    >
+                      {workout.name}
+                    </span>
+                    {isSelected(workout) && (
+                      <img src={RadioButton} alt="button" />
+                    )}
+                  </div>
 
-            <div className="button__workout">
-              
-              <span className='not-selected__title'> Гибкость спины</span>
-              <span className='not-selected__day'>Йога на каждый день/5 день</span>
+                  <span
+                    className={`title-day ${
+                      isSelected(workout) ? 'select-selected' : ''
+                    }`}
+                  >
+                    {' '}
+                    {workout.heading && workout.day
+                      ? `${workout.heading}/${workout.day}`
+                      : ''}
+                  </span>
+                </div>
+              ))}
+            
             </div>
-
-            <div className="button__workout">
-              
-              <span className='not-selected__title'> Гибкость спины</span>
-              <span className='not-selected__day'>Йога на каждый день/5 день</span>
-            </div>
-            <div className="button__workout">
-              
-              <span className='not-selected__title'> Гибкость спины</span>
-              <span className='not-selected__day'>Йога на каждый день/5 день</span>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
