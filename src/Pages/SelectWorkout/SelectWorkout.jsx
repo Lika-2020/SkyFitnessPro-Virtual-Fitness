@@ -5,7 +5,7 @@ import { selectWorkout } from '../../store/slice/workoutsSlice';
 import RadioButton from '../../images/radioButton.jpg';
 import { fetchWorkouts } from '../../api/api';
 import './style.css';
-import { selectCourseId } from '../../store/slice/coursesSlice';
+import { setCourseId } from '../../store/slice/coursesSlice';
 
 
 function SelectWorkout({ courseId }) {
@@ -19,14 +19,14 @@ function SelectWorkout({ courseId }) {
   const handleClick = (workout) => {
     if (selectedWorkout === workout) {
       dispatch(selectWorkout(null));
-      dispatch(selectCourseId(null));
+      dispatch(setCourseId(null));
       // unselect the workout
     } else {
       dispatch(selectWorkout(workout));
       // select the workout
 
-      dispatch(selectCourseId(courseId));
-      console.log(courseId);
+      dispatch(setCourseId(courseId));
+      console.log(setCourseId);
       navigate('/workoutVideo');
     }
   };
@@ -43,7 +43,7 @@ function SelectWorkout({ courseId }) {
     <div className="wrappers">
       <div className="container">
         <div className="block">
-          <div className="title">
+          <div className="title-heading">
             <span className="title-workout">Выберите тренировку</span>
           </div>
           {workouts.length === 0 ? (

@@ -1,4 +1,4 @@
-.container {
+.container-progress{
     height: 100vh;
     width: 100%;
     display: flex;
@@ -7,13 +7,14 @@
     flex-direction: column;
 }
 
-.title {
+.title-ok {
     font-family: 'StratosSkyeng';
     font-style: bold;
     font-size: 40px;
     line-height: 48px;
     width: 268px;
     text-align: center;
+    color: black;
 }
 
 .logo__hand {

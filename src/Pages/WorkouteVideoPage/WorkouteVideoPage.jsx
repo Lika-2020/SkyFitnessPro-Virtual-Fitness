@@ -17,6 +17,8 @@ function WorkouteVideoPage({ selectedCourse }) {
 
   const dispatch = useDispatch();
 
+  
+
   const selectedWorkout = useSelector(selectSelectedWorkout);
 
   useEffect(() => {
@@ -29,29 +31,28 @@ function WorkouteVideoPage({ selectedCourse }) {
     }
   }, [dispatch, selectedWorkout]);
 
-  if (!selectedWorkout) {
-    return <div>Loading</div>
-  }
+  
+
 
   return (
-    <div className="wrapper">
+    <div className="wrappers">
       <div className="container">
         <Header />
         <Navigation
           selectedWorkout={selectedWorkout}
           selectedCourse={selectedCourse}
         />
-        <YoutubePlayer url={selectedWorkout?.video} />
+        <YoutubePlayer videoId={selectedWorkout?.video} />
 
         <div className="progress-exercises">
           {selectedWorkout.exercises ? (
-            <Exercises exercises={selectedWorkout.exercises} />
+            <Exercises exercises={selectedWorkout?.exercises} />
           ) : (
             <p className="no-exercises">
               Нет данных об упражнениях <br /> для этой тренировки.
             </p>
           )}
-          <ProgressCounted exercises={selectedWorkout.exercises}  />
+          <ProgressCounted exercises={selectedWorkout?.exercises} />
         </div>
       </div>
     </div>

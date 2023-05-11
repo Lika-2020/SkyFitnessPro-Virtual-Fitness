@@ -14,23 +14,28 @@ function Exercises({ exercises }) {
     const progressData = {
        exercises, 
     };
-    navigate('/progress', { state: progressData });
+ 
+    if (progressData && progressData.exercises) {
+      navigate('/progress', { state: progressData });
+      };
   }
 
   
-
+  
   
 
   if (!exercises) {
     return null; // Ничего не выводим, если нет данных
   }
 
+  
+
   return (
     <div className="block__exercises">
       <span className="title-exercises">Упражнения</span>
 
       <ul className="ul">
-        {exercises.map((exercise) => (
+        {(exercises || []).map((exercise) => (
           <li key={exercise.id}>{exercise}</li>
         ))}
       </ul>
