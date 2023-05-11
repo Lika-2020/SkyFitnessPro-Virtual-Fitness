@@ -31,6 +31,7 @@ function RegisterPage() {
             token: user.accessToken,
           })
         );
+        
         navigate('/login');
       })
 

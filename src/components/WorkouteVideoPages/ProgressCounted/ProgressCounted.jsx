@@ -1,57 +1,64 @@
 import './style.css';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+ // import {setExerciseProgress} from '../../../store/slice/progressSlice'
 
-function ProgressCounted() {
-  const { exercisesCount, exerciseProgress } = useSelector(
-    (state) => {
-      console.log(state); // log state object to see what it contains
-      return state.progress;
-    }
-  );
-  
-  
+import { useEffect } from 'react';
 
-  if (!exercisesCount) {
+function ProgressCounted({ exercises }) {
+
+  const progress = useSelector(state => state.progress.exerciseProgress.progress);
+
+  const navigate = useNavigate();
+  console.log(progress)
+
+  if (!exercises) {
     return null; // Ничего не выводим, если нет данных
   }
+
+  useEffect(() => {
+    // Проверяем все значения прогресса
+  
+    if (progress && progress.every((item) => item >= 0.8)) {
+      navigate('/progress-ok');
+    }
+  }, [progress, navigate]);
 
   return (
     <div className="progress__counted">
       <div className="progress__title">
-        <span className="progress__title-title">Мой прогресс:</span>
+        <span className="progress__title-title">
+          Мой прогресс по тренировке:
+        </span>
       </div>
       <div className="progress__block">
         <div className="progress__bar-content">
-          {Object.keys(exerciseProgress).map((exerciseId) => (
-            <span key={exerciseId} className="title__span">
-              {exerciseId} ({exerciseProgress[exerciseId]} повторений)
+          {exercises.map((exercise) => (
+            <span key={exercise.id} className="title__span">
+              {exercise}
             </span>
           ))}
         </div>
         <div className="progress__bar">
-          {Object.keys(exerciseProgress).map((exerciseId) => {
-           const progress = Math.round(
-            (exerciseProgress[exerciseId] / exercisesCount) * 100
-          );
-          
-            
-            let colorClass = '';
-            if (progress >= 80) {
-              colorClass = 'progress-green';
-            } else if (progress >= 50) {
-              colorClass = 'progress-orange';
+          {(progress || []).map((Progress) => {
+            const value = Progress * 100;
+            console.log(value)
+            let color = '';
+            if (value < 30) {
+              color = 'progress-orange';
+            } else if (value < 70) {
+              color = 'progress-blue';
+           
             } else {
-              colorClass = 'progress-red';
+              color = 'progress-purple';
+          
             }
-            
+ 
+        
+             
             return (
-              <progress
-                key={exerciseId}
-                className={colorClass}
-                value={exerciseProgress[exerciseId]}
-                max={exercisesCount}
-              >
-                {progress}%
+              <progress key={Progress} className={color} value={value} max="100" data-percent={`${value}%`}>
+                {value}%
               </progress>
             );
           })}

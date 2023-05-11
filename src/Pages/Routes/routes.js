@@ -5,6 +5,7 @@ import MainPage from '../MainPage/MainPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import LoginPage from '../LoginPage/LoginPage';
 import ProgressPage from '../ProgressPage/ProgressPage';
+import ProgressCountedPage from '../ProgressCountedPage/ProgressCountedPage';
 
 function AppRoutes() {
   return (
@@ -15,6 +16,7 @@ function AppRoutes() {
       <Route path="/select-workouts" element={<SelectWorkout />} />
       <Route path="/workoutVideo" element={<WorkouteVideoPage />} />
       <Route path="/progress" element={<ProgressPage />} />
+      <Route path="/progress-ok" element={<ProgressCountedPage />} />
     </Routes>
   );
 }

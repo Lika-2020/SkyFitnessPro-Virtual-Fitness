@@ -17,8 +17,8 @@ function YoutubePlayer(props) {
     },
   };
 
-  const  {videoId}  = props;
-
+ const  {videoId}  = props;
+console.log(videoId)
   return (
     <div>
       <YouTube opts={opts} videoId={videoId} />

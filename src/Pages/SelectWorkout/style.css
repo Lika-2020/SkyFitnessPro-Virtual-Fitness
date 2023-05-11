@@ -14,18 +14,18 @@
   border: 5px solid rgba(0, 0, 0, 0.05); /* padding вокруг плашки */
 }
 
-.wrappers{
+.wrappers {
   display: flex;
   justify-content: center;
-align-items: center;
+  align-items: center;
+
 }
 
-
-
-.title {
+.title-heading {
   display: flex;
   justify-content: center;
-  margin-left: 50px;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 .title-workout {
@@ -39,6 +39,7 @@ align-items: center;
 
 .block {
   margin-top: 326px;
+  width: 436px;
 }
 .buttons {
   height: 452px;
@@ -46,9 +47,7 @@ align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 50px;
   overflow-y: scroll;
-  
 }
 
 img {
@@ -60,8 +59,8 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 278px;
-  border: 1px solid  black;
+  width: 298px;
+  border: 1px solid black;
   border-radius: 26px;
   box-sizing: border-box;
   padding-bottom: 17px;
@@ -69,10 +68,8 @@ img {
 }
 
 .selected {
-  border: 1px solid #06B16E;
-
+  border: 1px solid #06b16e;
 }
-
 
 .title-lesson {
   font-family: 'StratosSkyeng, sans-serif';
@@ -81,10 +78,8 @@ img {
   font-weight: 400;
   font-size: 20px;
   margin-top: 11px;
-
+  text-align: center;
 }
-
-
 
 .title-day {
   color: black;
@@ -95,14 +90,13 @@ img {
 }
 
 .select-selected {
-  color: #06B16E ;
+  color: #06b16e;
 }
-
 
 .select {
   display: flex;
   margin-bottom: 6px;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 .not-selected__title {
