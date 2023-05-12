@@ -7,10 +7,10 @@ import ButtonGo from '../../components/Buttons/ButtonGo/ButtonGo';
 
 function MyProfilePage() {
   return (
-    <div className="container">
-      <div className="header">
+    <div className="container-myProf">
+      <div className="header-myProf">
         <img src={Logo} alt="Logo" />
-        <div className="user">
+        <div className="user-myProf">
           <img src={Avatar} alt="Avatar" className="user__avatar" />
           <select name="" id="">
             <option value="Сергей">Сергей</option>
@@ -18,7 +18,7 @@ function MyProfilePage() {
         </div>
       </div>
       <div className="user__profile">
-        <h1 className="title">Мой профиль</h1>
+        <h1 className="title-myProf">Мой профиль</h1>
         <p className="user__login user__info">Логин: sergey.petrov96</p>
         <p className="user__password user__info">Пароль: 4fkhdj880d</p>
         <div className="user__buttons">
@@ -27,7 +27,7 @@ function MyProfilePage() {
         </div>
       </div>
       <div className="my__courses">
-        <h1 className="title">Мои курсы</h1>
+        <h1 className="title-myProf">Мои курсы</h1>
         <div className="courses__cards">
           <div className="courses__card card-3">
             <p className="card__text">Йога</p>

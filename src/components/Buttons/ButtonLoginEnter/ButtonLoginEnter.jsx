@@ -1,8 +1,8 @@
 import '../style.css';
 
-function ButtonLoginEnter() {
+function ButtonLoginEnter({onClick}) {
   return (
-    <div className="wrapper__button">
+    <div role='presentation' className="wrapper__button" onClick={onClick}>
       <p className="text__button">Войти</p>
     </div>
   );
