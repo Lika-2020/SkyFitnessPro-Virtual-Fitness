@@ -34,7 +34,7 @@ function LoginPage() {
             token: user.accessToken,
           })
         );
-        navigate('/');
+        navigate('/my-profile');
       })
 
       .catch((err) => {

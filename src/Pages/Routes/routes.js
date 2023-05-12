@@ -6,6 +6,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import LoginPage from '../LoginPage/LoginPage';
 import ProgressPage from '../ProgressPage/ProgressPage';
 import ProgressCountedPage from '../ProgressCountedPage/ProgressCountedPage';
+import MyProfilePage from '../MyProfilePage/MyProfilePage'
 
 function AppRoutes() {
   return (
@@ -17,6 +18,8 @@ function AppRoutes() {
       <Route path="/workoutVideo" element={<WorkouteVideoPage />} />
       <Route path="/progress" element={<ProgressPage />} />
       <Route path="/progress-ok" element={<ProgressCountedPage />} />
+      <Route path="/my-profile" element={<MyProfilePage/>} />
+
     </Routes>
   );
 }
