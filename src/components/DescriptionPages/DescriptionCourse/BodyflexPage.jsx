@@ -1,9 +1,23 @@
 import './style.css';
+import { useEffect, useState } from 'react';
 import Card1 from '../../../images/1.svg';
 import Card2 from '../../../images/2.svg';
 import Card3 from '../../../images/3.svg';
+import getContent from '../../../api/course_content';
 
 function StretchingPage() {
+  const [course, setCourse] = useState([]);
+
+  const fetchData = () => {
+    getContent().then((data) => {
+      setCourse(data.courses['TBzG9e ']);
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  console.log(course);
   return (
     <div className="about_div">
       <div className="foryou_div">

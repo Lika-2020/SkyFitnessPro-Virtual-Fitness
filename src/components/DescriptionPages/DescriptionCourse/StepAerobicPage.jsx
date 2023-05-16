@@ -1,9 +1,24 @@
 import './style.css';
+import { useEffect, useState } from 'react';
 import Card1 from '../../../images/1.svg';
 import Card2 from '../../../images/2.svg';
 import Card3 from '../../../images/3.svg';
+import getContent from '../../../api/course_content';
 
 function StepAerobicPage() {
+  const [course, setCourse] = useState([]);
+
+  const fetchData = () => {
+    getContent().then((data) => {
+      setCourse(data.courses.y1kT5D);
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(course);
   return (
     <div className="about_div">
       <div className="foryou_div">
@@ -18,7 +33,7 @@ function StepAerobicPage() {
               alt="1"
             />
             <h3 className="foryou_div_description_point_text1">
-              Хотите укрепить дыхательную и сердечно-сосудистой системы
+              {course.suitable}
             </h3>
           </div>
           <div className="foryou_div_description_point">
@@ -47,9 +62,12 @@ function StepAerobicPage() {
             <h3 className="directions_description_title">Направления:</h3>
           </div>
           <div className="directions_div_description_list">
-            <h3 className="directions_div_description_list_text">
-              • Для начинающих <br /> • Для похудения <br /> • Для детей
-            </h3>
+            {course.directions > 0 && course.directions.length > 0 && (
+              <h3 className="directions_div_description_list_text">
+                • {course.directions.at(1)} <br /> • {course.directions.at(2)}
+                <br /> • {course.directions.at(3)}
+              </h3>
+            )}
           </div>
         </div>
         <div className="description_div">
