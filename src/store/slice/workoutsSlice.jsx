@@ -24,6 +24,11 @@ const workoutsSlice = createSlice({
       ...state,
       workouts: action.payload,
     }),
+
+    setLoading: (state, action) => ({
+      ...state,
+      loading: action.payload,
+    }),
   
   },
   extraReducers: (builder) => {
@@ -47,11 +52,11 @@ const workoutsSlice = createSlice({
   },
 });
 
-export const { selectWorkout, setSelectedWorkout, setWorkouts } = workoutsSlice.actions;
+export const { selectWorkout, setSelectedWorkout, setWorkouts, setLoading} = workoutsSlice.actions;
 
 export const selectSelectedWorkout = (state) => state.workouts.selectedWorkout;
 export const selectWorkouts = (state) => state.workouts.workouts;
 export const selectLoading = (state) => state.workouts.loading;
 export const selectError = (state) => state.workouts.error;
 
-export default workoutsSlice.reducer;
+export default workoutsSlice.reducer

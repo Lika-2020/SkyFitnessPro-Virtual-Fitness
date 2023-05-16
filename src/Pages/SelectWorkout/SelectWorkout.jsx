@@ -1,12 +1,12 @@
+/* eslint-disable no-underscore-dangle */
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { selectWorkout } from '../../store/slice/workoutsSlice';
 import RadioButton from '../../images/radioButton.jpg';
-import { fetchWorkouts } from '../../api/api';
+import { fetchWorkouts, fetchExercises } from '../../api/api';
 import './style.css';
 import { setCourseId } from '../../store/slice/coursesSlice';
-
 
 function SelectWorkout({ courseId }) {
   const navigate = useNavigate();
@@ -17,14 +17,15 @@ function SelectWorkout({ courseId }) {
   );
 
   const handleClick = (workout) => {
-    if (selectedWorkout === workout) {
+   if ( selectedWorkout === workout) {
       dispatch(selectWorkout(null));
-      dispatch(setCourseId(null));
+     dispatch(setCourseId(null));
       // unselect the workout
     } else {
       dispatch(selectWorkout(workout));
-      // select the workout
-
+      const selectedWorkoutId = workouts.find((w) => w._id === workout._id)._id;
+      dispatch(fetchExercises(selectedWorkoutId));
+      console.log(selectedWorkoutId);
       dispatch(setCourseId(courseId));
       console.log(setCourseId);
       navigate('/workoutVideo');
@@ -89,7 +90,6 @@ function SelectWorkout({ courseId }) {
                   </span>
                 </div>
               ))}
-            
             </div>
           )}
         </div>

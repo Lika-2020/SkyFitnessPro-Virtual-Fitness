@@ -1,7 +1,7 @@
 import './style.css';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
- // import {setExerciseProgress} from '../../../store/slice/progressSlice'
+ 
 
 import { useEffect } from 'react';
 
@@ -12,9 +12,7 @@ function ProgressCounted({ exercises }) {
   const navigate = useNavigate();
   console.log(progress)
 
-  if (!exercises) {
-    return null; // Ничего не выводим, если нет данных
-  }
+ 
 
   useEffect(() => {
     // Проверяем все значения прогресса
@@ -33,7 +31,7 @@ function ProgressCounted({ exercises }) {
       </div>
       <div className="progress__block">
         <div className="progress__bar-content">
-          {exercises.map((exercise) => (
+          {exercises?.map((exercise) => (
             <span key={exercise.id} className="title__span">
               {exercise}
             </span>
