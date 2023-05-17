@@ -5,6 +5,7 @@ import StretchingPage from './Pages/DescriptionPages/StretchingDescriptionPage';
 import DanceFitness from './Pages/DescriptionPages/DanceFitnessDescriptionPage';
 import StepAerobic from './Pages/DescriptionPages/StepaerobicDescriptionPage';
 import Bodyflex from './Pages/DescriptionPages/BodyflexDescriptionPage';
+import LoginPage from './Pages/LoginPage/LoginPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/dancefitness" element={<DanceFitness />} />
         <Route path="/stepaerobic" element={<StepAerobic />} />
         <Route path="/bodyflex" element={<Bodyflex />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );

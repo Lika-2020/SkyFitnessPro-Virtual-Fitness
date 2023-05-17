@@ -4,9 +4,10 @@ import DescriptionCourse from '../../components/DescriptionPages/DescriptionCour
 import SubmitApplication from '../../components/DescriptionPages/SubmitApplication/SubmitApplication';
 
 function YogaDescriptionPage() {
+  document.body.style = ' background-color: #fafafa;';
   return (
-    <div className="body_courses">
-      <div className="wrapper">
+    <div className="courses_body">
+      <div className="courses_wrapper">
         <div className="courses_container">
           <Header />
           <DescriptionCourse />

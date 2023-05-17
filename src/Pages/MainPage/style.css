@@ -1,22 +1,26 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  background-color: #271a58;
+
   margin-left: 140px;
   margin-right: 140px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-.wrapper {
+.main_wrapper {
+  background-color: #271a58;
+}
+
+.main_body {
   background-color: #271a58;
 }

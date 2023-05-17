@@ -6,13 +6,16 @@ import TitleBlockCourses from '../../components/Main/TitleBlockCourses/TitleBloc
 import Footer from '../../components/Main/Footer/Footer';
 
 function MainPage() {
+  document.body.style = 'background-color: #271a58;';
   return (
-    <div className="wrapper">
-      <div className="container">
-        <Header />
-        <Title />
-        <TitleBlockCourses />
-        <Footer />
+    <div className="main_body">
+      <div className="main_wrapper">
+        <div className="main_container">
+          <Header />
+          <Title />
+          <TitleBlockCourses />
+          <Footer />
+        </div>
       </div>
     </div>
   );
