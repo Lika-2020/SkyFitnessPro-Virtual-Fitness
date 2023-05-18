@@ -31,11 +31,11 @@ function ProgressCounted({ exercises }) {
       </div>
       <div className="progress__block">
         <div className="progress__bar-content">
-          {exercises?.map((exercise) => (
-            <span key={exercise.id} className="title__span">
-              {exercise}
+         
+            <span key={exercises.id} className="title__span">
+              {exercises}
             </span>
-          ))}
+        
         </div>
         <div className="progress__bar">
           {(progress || []).map((Progress) => {

@@ -51,9 +51,9 @@ function Exercises() {
       <span className="title-exercises">Упражнения</span>
 
       <ul className="ul">
-        {exercises?.map((exercise) => (
-          <li key={exercise.id}>{exercise}</li>
-        ))}
+      
+          <li key={exercises.id}>{exercises}</li>
+        
       </ul>
       <ButtonProgress onClick={handleProgressClick} />
     </div>

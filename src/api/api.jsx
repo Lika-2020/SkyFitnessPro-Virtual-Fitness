@@ -38,10 +38,10 @@ export const fetchCoursesByCourseId = createAsyncThunk(
 
 export const fetchExercises = createAsyncThunk(
   'exercise/fetchExercises',
-  async (workoutId) => {
+  async (workoutId, exerciseId) => {
     const dbRef = ref(db);
     const workoutSnapshot = await get(
-      child(dbRef, `workouts/${workoutId}/exercises`)
+      child(dbRef, `workouts/${workoutId}/exercises/${exerciseId}/name`)
     );
 
     const exercises = Object.values(workoutSnapshot.val());
