@@ -1,5 +1,6 @@
 import './style.css';
 import { useEffect, useState } from 'react';
+
 import Card1 from '../../../images/1.svg';
 import Card2 from '../../../images/2.svg';
 import Card3 from '../../../images/3.svg';
@@ -8,6 +9,7 @@ import getContent from '../../../api/course_content';
 function YogaPage() {
   const [course, setCourse] = useState([]);
   const [loading, setLoading] = useState([]);
+
   const fetchData = async () => {
     setLoading(true);
     await getContent().then((response) => {
@@ -18,7 +20,7 @@ function YogaPage() {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(course);
+
   if (!loading)
     return (
       <div className="about_div">
