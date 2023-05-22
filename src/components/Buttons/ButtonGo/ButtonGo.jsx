@@ -1,8 +1,8 @@
 import './style.css';
 
-function ButtonGo() {
+function ButtonGo({ onClick }) {
   return (
-    <div className="wrapper__button-go">
+    <div role="presentation" className="wrapper__button-go" onClick={onClick}>
       <p className="text__button-go">Перейти →</p>
     </div>
   );
