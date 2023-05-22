@@ -30,7 +30,6 @@ function Exercises() {
 
   useEffect(() => {
     dispatch(fetchExercises()); // Вызываем функцию загрузки упражнений
-
   }, [dispatch]);
 
   useEffect(() => {
@@ -51,9 +50,9 @@ function Exercises() {
       <span className="title-exercises">Упражнения</span>
 
       <ul className="ul">
-      
-          <li key={exercises.id}>{exercises}</li>
-        
+        {exercises?.map((exercise) => (
+          <li key={exercise.id}>{exercise}</li>
+        ))}
       </ul>
       <ButtonProgress onClick={handleProgressClick} />
     </div>

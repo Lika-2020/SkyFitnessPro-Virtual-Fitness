@@ -12,22 +12,22 @@ import {
 
 import {
   setExercises,
- selectExercises,
+  selectExercises,
 } from '../../store/slice/exercisesSlice';
 
 import {
   fetchWorkouts,
   fetchCoursesByCourseId,
- fetchExercises,
+  fetchExercises,
 } from '../../api/api';
 
 import './style.css';
 
-function WorkouteVideoPage({ selectedCourse}) {
+function WorkouteVideoPage({ selectedCourse }) {
   const dispatch = useDispatch();
 
   const selectedWorkout = useSelector(selectSelectedWorkout);
- let exercises = useSelector(selectExercises);
+  let exercises = useSelector(selectExercises);
 
   console.log(selectSelectedWorkout);
 
@@ -41,7 +41,7 @@ function WorkouteVideoPage({ selectedCourse}) {
     }
   }, [dispatch, selectedWorkout]);
 
-   useEffect(() => {
+  useEffect(() => {
     dispatch(setLoading(true));
 
     try {
@@ -62,7 +62,7 @@ function WorkouteVideoPage({ selectedCourse}) {
     }
 
     dispatch(setLoading(false));
-  }, [dispatch]); 
+  }, [dispatch]);
 
   return (
     <div className="wrappers">
@@ -76,7 +76,7 @@ function WorkouteVideoPage({ selectedCourse}) {
 
         <div className="progress-exercises">
           {selectedWorkout?.exercises ? (
-            <Exercises  exercises={selectedWorkout?.exercises} />
+            <Exercises exercises={selectedWorkout?.exercises} />
           ) : (
             <p className="no-exercises">
               Нет данных об упражнениях <br /> для этой тренировки.

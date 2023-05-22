@@ -1,11 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ref, child, get } from 'firebase/database';
 
-
-
 import db from '../database/db';
-
-
 
 export const fetchWorkouts = createAsyncThunk(
   'workout/fetchWorkouts',
@@ -38,14 +34,14 @@ export const fetchCoursesByCourseId = createAsyncThunk(
 
 export const fetchExercises = createAsyncThunk(
   'exercise/fetchExercises',
-  async (workoutId, exerciseId) => {
+  async (workoutId) => {
     const dbRef = ref(db);
     const workoutSnapshot = await get(
-      child(dbRef, `workouts/${workoutId}/exercises/${exerciseId}/name`)
+      child(dbRef, `workouts/${workoutId}/exercises/`)
     );
 
     const exercises = Object.values(workoutSnapshot.val());
-  
+
     console.log(exercises);
     return exercises;
   }
