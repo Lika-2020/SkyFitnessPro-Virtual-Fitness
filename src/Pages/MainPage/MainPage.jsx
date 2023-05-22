@@ -19,5 +19,6 @@ function MainPage() {
       </div>
     </div>
   );
+  
 }
 export default MainPage;

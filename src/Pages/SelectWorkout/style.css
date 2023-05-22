@@ -1,0 +1,115 @@
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 452px;
+
+  /* ширина scrollbar */
+}
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px; /* цвет дорожки */
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15); /* цвет плашки */
+  border-radius: 10px; /* закругления плашки */
+  border: 5px solid rgba(0, 0, 0, 0.05); /* padding вокруг плашки */
+}
+
+.wrappers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.title-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.title-workout {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  font-family: 'StratosSkyeng, sans-serif';
+  color: black;
+}
+
+.block {
+  margin-top: 326px;
+  width: 436px;
+}
+.buttons {
+  height: 452px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+img {
+  padding-left: 11px;
+  margin-top: 11px;
+}
+
+.button__workout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 298px;
+  border: 1px solid black;
+  border-radius: 26px;
+  box-sizing: border-box;
+  padding-bottom: 17px;
+  margin-bottom: 15px;
+}
+
+.selected {
+  border: 1px solid #06b16e;
+}
+
+.title-lesson {
+  font-family: 'StratosSkyeng, sans-serif';
+  color: black;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 11px;
+  text-align: center;
+}
+
+.title-day {
+  color: black;
+  font-family: 'StratosSkyeng, sans-serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.select-selected {
+  color: #06b16e;
+}
+
+.select {
+  display: flex;
+  margin-bottom: 6px;
+  margin-left: 30px;
+}
+
+.not-selected__title {
+  font-family: 'StratosSkyeng, sans-serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 11px;
+}
+
+.not-selected__day {
+  font-family: 'StratosSkyeng, sans-serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
