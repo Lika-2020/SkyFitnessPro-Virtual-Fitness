@@ -11,7 +11,7 @@ function YogaDescriptionPage() {
         <div className="courses_container">
           <Header />
           <DescriptionCourse />
-          <SubmitApplication id=" ab1c3f" />
+          <SubmitApplication id="ab1c3f" />
         </div>
       </div>
     </div>

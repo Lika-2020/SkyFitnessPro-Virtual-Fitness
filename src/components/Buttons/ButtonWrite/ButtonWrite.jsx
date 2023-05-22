@@ -1,15 +1,10 @@
 import './style.css';
-import { getDatabase, ref, child, get, set } from 'firebase/database';
-import { initializeApp } from 'firebase/app';
+import { ref, child, get, set } from 'firebase/database';
+
 import { useRef, useEffect } from 'react';
+import db from '../../../database/db';
 
 function addCourseToUser(id) {
-  const firebaseConfig = {
-    databaseURL:
-      'https://skyfitnesspro-virtual-fitness-default-rtdb.europe-west1.firebasedatabase.app/',
-  };
-  const appdb = initializeApp(firebaseConfig);
-  const db = getDatabase(appdb);
   const refe = ref(db);
   let isSub = false;
   const uCourses = [];

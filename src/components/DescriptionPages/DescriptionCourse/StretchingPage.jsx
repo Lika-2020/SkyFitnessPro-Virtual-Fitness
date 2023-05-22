@@ -11,7 +11,7 @@ function StretchingPage() {
   const fetchData = async () => {
     setLoading(true);
     await getContent().then((response) => {
-      setCourse(response.courses[' ab1c3f']);
+      setCourse(response.courses.ab1c3f);
       setLoading(false);
     });
   };

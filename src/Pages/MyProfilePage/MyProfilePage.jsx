@@ -40,7 +40,7 @@ function MyProfilePage() {
   useEffect(() => {
     fetchData();
   }, []);
-  if (!loading) console.log();
+  if (!loading) console.log(course);
   if (!loading)
     return (
       <div className="container-myProf">
@@ -66,10 +66,10 @@ function MyProfilePage() {
           <h1 className="title-myProf">Мои курсы</h1>
 
           <div className="courses__cards">
-            {Object.getOwnPropertyNames(course.users.courses).map((item) => {
-              console.log(item);
+            {course.users.courses.map((item) => {
+              console.log(Object.getOwnPropertyNames(item)[0]);
               let card = '';
-              switch (item) {
+              switch (Object.getOwnPropertyNames(item)[0]) {
                 case 'ab1c3f':
                   card = 'card-2';
                   break;
@@ -88,11 +88,13 @@ function MyProfilePage() {
                 default:
                   console.log('error');
               }
-              console.log(course.courses['6jxvC1']);
-              let coursename = course.courses[item].name;
+              console.log(course.courses[item]);
+              let coursename =
+                course.courses[Object.getOwnPropertyNames(item)[0]].name;
               console.log(coursename);
               if (coursename == null) {
-                coursename = course.courses[item]['name '];
+                coursename =
+                  course.courses[Object.getOwnPropertyNames(item)[0]]['name '];
               }
               return (
                 <div className={`courses__card ${card}`}>
