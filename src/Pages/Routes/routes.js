@@ -19,6 +19,7 @@ function AppRoutes() {
       <Route path="/progress" element={<ProgressPage />} />
       <Route path="/progress-ok" element={<ProgressCountedPage />} />
       <Route path="/my-profile" element={<MyProfilePage/>} />
+    
 
     </Routes>
   );

@@ -1,25 +1,30 @@
 /* eslint-disable no-underscore-dangle */
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { selectWorkout } from '../../store/slice/workoutsSlice';
 import RadioButton from '../../images/radioButton.jpg';
 import { fetchWorkouts, fetchExercises } from '../../api/api';
 import './style.css';
 import { setCourseId } from '../../store/slice/coursesSlice';
 
-function SelectWorkout({ courseId }) {
+function SelectWorkout({ courseId, course }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  console.log(course);
+  // eslint-disable-next-line no-unused-vars
+  const [selectedCourse, setSelectedCourse] = useState(null);
+
   const workouts = useSelector((state) => state.workouts.workouts);
   const selectedWorkout = useSelector(
     (state) => state.workouts.selectedWorkout
   );
 
   const handleClick = (workout) => {
-   if ( selectedWorkout === workout) {
+    if (selectedWorkout === workout) {
       dispatch(selectWorkout(null));
-     dispatch(setCourseId(null));
+      dispatch(setCourseId(null));
       // unselect the workout
     } else {
       dispatch(selectWorkout(workout));
@@ -40,6 +45,12 @@ function SelectWorkout({ courseId }) {
   }, [dispatch]);
   console.log(workouts);
 
+  const courseArray = Object.values(course);
+  console.log(courseArray);
+  const filteredWorkouts = workouts.filter((workout) =>
+    courseArray?.workout.includes(workout._id)
+  );
+
   return (
     <div className="wrappers">
       <div className="container">
@@ -47,11 +58,11 @@ function SelectWorkout({ courseId }) {
           <div className="title-heading">
             <span className="title-workout">Выберите тренировку</span>
           </div>
-          {workouts.length === 0 ? (
+          {filteredWorkouts.length === 0 ? (
             <div>Loading...</div>
           ) : (
             <div className="buttons">
-              {workouts.map((workout) => (
+              {filteredWorkouts.map((workout) => (
                 <div
                   role="presentation"
                   key={workout.id}

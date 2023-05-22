@@ -1,6 +1,7 @@
 import './style.css';
 import { useEffect, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
+import SelectWorkout from '../SelectWorkout/SelectWorkout';
 import Logo from '../../images/logo.png';
 import Avatar from '../../images/avatar.png';
 import ButtonChangeLogin from '../../components/Buttons/ButtonChangeLogin/ButtonChangeLogin';
@@ -29,6 +30,9 @@ async function getCoursesContent() {
 function MyProfilePage() {
   const [course, setCourse] = useState([]);
   const [loading, setLoading] = useState([]);
+  const [selectedCourse, setSelectedCourse] = useState(null);
+
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     setLoading(true);
@@ -37,6 +41,12 @@ function MyProfilePage() {
       setLoading(false);
     });
   };
+
+  const handleCourseSelect = (courseId) => {
+    setSelectedCourse(courseId);
+    navigate('/select-workouts');
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -98,12 +108,14 @@ function MyProfilePage() {
                 <div className={`courses__card ${card}`}>
                   <p className="card__text" />
                   <div className="card__button">
-                    <ButtonGo />
+                    <ButtonGo onClick={handleCourseSelect} />
                   </div>
                 </div>
               );
             })}
           </div>
+          {selectedCourse &&  <SelectWorkout courseId={selectedCourse} course={course} />}
+
         </div>
       </div>
     );
