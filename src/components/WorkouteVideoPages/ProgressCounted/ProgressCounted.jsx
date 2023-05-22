@@ -1,22 +1,20 @@
 import './style.css';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
- 
 
 import { useEffect } from 'react';
 
 function ProgressCounted({ exercises }) {
-
-  const progress = useSelector(state => state.progress.exerciseProgress.progress);
+  const progress = useSelector(
+    (state) => state.progress.exerciseProgress.progress
+  );
 
   const navigate = useNavigate();
-  console.log(progress)
-
- 
+  console.log(progress);
 
   useEffect(() => {
     // Проверяем все значения прогресса
-  
+
     if (progress && progress.every((item) => item >= 0.8)) {
       navigate('/progress-ok');
     }
@@ -40,22 +38,24 @@ function ProgressCounted({ exercises }) {
         <div className="progress__bar">
           {(progress || []).map((Progress) => {
             const value = Progress * 100;
-            console.log(value)
+            console.log(value);
             let color = '';
             if (value < 30) {
               color = 'progress-orange';
             } else if (value < 70) {
               color = 'progress-blue';
-           
             } else {
               color = 'progress-purple';
-          
             }
- 
-        
-             
+
             return (
-              <progress key={Progress} className={color} value={value} max="100" data-percent={`${value}%`}>
+              <progress
+                key={Progress}
+                className={color}
+                value={value}
+                max="100"
+                data-percent={`${value}%`}
+              >
                 {value}%
               </progress>
             );

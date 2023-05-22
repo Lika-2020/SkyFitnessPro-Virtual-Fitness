@@ -30,7 +30,6 @@ function Exercises() {
 
   useEffect(() => {
     dispatch(fetchExercises()); // Вызываем функцию загрузки упражнений
-
   }, [dispatch]);
 
   useEffect(() => {
