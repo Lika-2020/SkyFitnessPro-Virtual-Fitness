@@ -1,8 +1,8 @@
 .div_main {
-  margin-top: 52px;
   display: flex;
   flex-wrap: wrap;
   gap: 37px;
+  background-color: #271a58;
 }
 
 .sports_card {

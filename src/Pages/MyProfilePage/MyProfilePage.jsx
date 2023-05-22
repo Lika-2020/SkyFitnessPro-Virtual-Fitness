@@ -6,6 +6,7 @@ import Avatar from '../../images/avatar.png';
 import ButtonChangeLogin from '../../components/Buttons/ButtonChangeLogin/ButtonChangeLogin';
 import ButtonChangePassword from '../../components/Buttons/ButtonChangePassword/ButtonChangePassword';
 import ButtonGo from '../../components/Buttons/ButtonGo/ButtonGo';
+import SelectWorkout from '../SelectWorkout/SelectWorkout';
 
 async function getCoursesContent() {
   try {
@@ -29,6 +30,7 @@ async function getCoursesContent() {
 function MyProfilePage() {
   const [course, setCourse] = useState([]);
   const [loading, setLoading] = useState([]);
+  const [selectedCourse, setSelectedCourse] = useState(null);
 
   const fetchData = async () => {
     setLoading(true);
@@ -37,11 +39,21 @@ function MyProfilePage() {
       setLoading(false);
     });
   };
+
+
+const handleCourseSelect = (courseId) => {
+  setSelectedCourse(courseId);
+  NavigationPreloadManager(`/select-workouts/${courseId}`);
+}
+
   useEffect(() => {
     fetchData();
   }, []);
-  if (!loading) console.log();
+  if (!loading) console.log(course);
   if (!loading)
+
+
+
     return (
       <div className="container-myProf">
         <div className="header-myProf">
@@ -66,10 +78,10 @@ function MyProfilePage() {
           <h1 className="title-myProf">Мои курсы</h1>
 
           <div className="courses__cards">
-            {Object.getOwnPropertyNames(course.users.courses).map((item) => {
-              console.log(item);
+            {course.users.courses.map((item) => {
+              console.log(Object.getOwnPropertyNames(item)[0]);
               let card = '';
-              switch (item) {
+              switch (Object.getOwnPropertyNames(item)[0]) {
                 case 'ab1c3f':
                   card = 'card-2';
                   break;
@@ -88,22 +100,25 @@ function MyProfilePage() {
                 default:
                   console.log('error');
               }
-              console.log(course.courses['6jxvC1']);
-              let coursename = course.courses[item].name;
+              console.log(course.courses[item]);
+              let coursename =
+                course.courses[Object.getOwnPropertyNames(item)[0]].name;
               console.log(coursename);
               if (coursename == null) {
-                coursename = course.courses[item]['name '];
+                coursename =
+                  course.courses[Object.getOwnPropertyNames(item)[0]]['name '];
               }
               return (
                 <div className={`courses__card ${card}`}>
                   <p className="card__text" />
                   <div className="card__button">
-                    <ButtonGo />
+                    <ButtonGo onClick={handleCourseSelect} />
                   </div>
                 </div>
               );
             })}
           </div>
+          {selectedCourse &&  <SelectWorkout courseId={selectedCourse} course={course} />}
         </div>
       </div>
     );

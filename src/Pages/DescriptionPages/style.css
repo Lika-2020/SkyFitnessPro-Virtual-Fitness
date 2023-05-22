@@ -1,18 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
+
+.body_courses {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  background-color: #fafafa;
+.courses_wrapper {
   margin-left: 140px;
   margin-right: 140px;
 }
 
-a {
-  text-decoration: none;
+.courses_container {
+  background-color: #fafafa;
 }

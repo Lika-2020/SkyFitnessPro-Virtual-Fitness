@@ -5,3 +5,8 @@
 .skill_card {
   margin-top: 74px;
 }
+
+.div_header_courses {
+  display: flex;
+  flex-direction: column;
+}

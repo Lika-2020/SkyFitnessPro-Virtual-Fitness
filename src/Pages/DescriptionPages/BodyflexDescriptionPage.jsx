@@ -1,6 +1,6 @@
 import './style.css';
 import Header from '../../components/DescriptionPages/LogoNameCourse/LogoNameCourse';
-import DescriptionCourse from '../../components/DescriptionPages/DescriptionCourse/YogaPage';
+import DescriptionCourse from '../../components/DescriptionPages/DescriptionCourse/BodyflexPage';
 import SubmitApplication from '../../components/DescriptionPages/SubmitApplication/SubmitApplication';
 
 function YogaDescriptionPage() {
@@ -11,7 +11,7 @@ function YogaDescriptionPage() {
         <div className="courses_container">
           <Header />
           <DescriptionCourse />
-          <SubmitApplication id="X2g8dk" />
+          <SubmitApplication id="TBzG9e" />
         </div>
       </div>
     </div>

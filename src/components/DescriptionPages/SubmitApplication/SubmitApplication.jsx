@@ -2,7 +2,7 @@ import './style.css';
 import Svg from '../../../images/applicationsvg.svg';
 import ButtonWrite from '../../Buttons/ButtonWrite/ButtonWrite';
 
-function SubmitApplication() {
+function SubmitApplication(props) {
   return (
     <div className="SubmitApplication_div">
       <div className="SubmitApplication_main">
@@ -11,7 +11,7 @@ function SubmitApplication() {
           с выбором направления и тренера, <br /> с которым тренировки принесут
           здоровье и радость!
         </h2>
-        <ButtonWrite />
+        <ButtonWrite id={props.id} />
       </div>
       <img className="SubmitApplication_svg" src={Svg} alt="svg" />
     </div>
