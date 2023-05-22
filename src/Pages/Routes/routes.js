@@ -13,7 +13,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/registration" element={<RegisterPage />} />
 
-      <Route path="/select-workouts" element={<SelectWorkout />} />
+      <Route path="/select-workouts/:id" element={<SelectWorkout />} />
       <Route path="/workoutVideo" element={<WorkouteVideoPage />} />
       <Route path="/progress" element={<ProgressPage />} />
       <Route path="/progress-ok" element={<ProgressCountedPage />} />

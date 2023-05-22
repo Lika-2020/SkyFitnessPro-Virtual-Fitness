@@ -6,6 +6,7 @@ import Avatar from '../../images/avatar.png';
 import ButtonChangeLogin from '../../components/Buttons/ButtonChangeLogin/ButtonChangeLogin';
 import ButtonChangePassword from '../../components/Buttons/ButtonChangePassword/ButtonChangePassword';
 import ButtonGo from '../../components/Buttons/ButtonGo/ButtonGo';
+import SelectWorkout from '../SelectWorkout/SelectWorkout';
 
 async function getCoursesContent() {
   try {
@@ -29,6 +30,7 @@ async function getCoursesContent() {
 function MyProfilePage() {
   const [course, setCourse] = useState([]);
   const [loading, setLoading] = useState([]);
+  const [selectedCourse, setSelectedCourse] = useState(null);
 
   const fetchData = async () => {
     setLoading(true);
@@ -37,11 +39,21 @@ function MyProfilePage() {
       setLoading(false);
     });
   };
+
+
+const handleCourseSelect = (courseId) => {
+  setSelectedCourse(courseId);
+  NavigationPreloadManager(`/select-workouts/${courseId}`);
+}
+
   useEffect(() => {
     fetchData();
   }, []);
   if (!loading) console.log(course);
   if (!loading)
+
+
+
     return (
       <div className="container-myProf">
         <div className="header-myProf">
@@ -100,12 +112,13 @@ function MyProfilePage() {
                 <div className={`courses__card ${card}`}>
                   <p className="card__text" />
                   <div className="card__button">
-                    <ButtonGo />
+                    <ButtonGo onClick={handleCourseSelect} />
                   </div>
                 </div>
               );
             })}
           </div>
+          {selectedCourse &&  <SelectWorkout courseId={selectedCourse} course={course} />}
         </div>
       </div>
     );
